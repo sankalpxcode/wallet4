@@ -1,185 +1,294 @@
-/* Reset default margin and padding */
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Main colors */
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border: #e2e8f0;
+  
+  /* Status colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Ensure the app takes the full screen */
-html, body {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-primary);
+  background-color: var(--background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main app container */
-.App {
-  width: 100vw;
-  height: 100vh;
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* App Layout */
+.app-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background-color: white; /* Changed from black to white */
-  overflow: hidden;
+  min-height: 100vh;
 }
 
-/* Logo styling */
-.frontPageLogo {
-  width: 80%;
-  max-width: 300px;
-  animation: fadeIn 1.5s ease-in-out;
+/* Header Styles */
+.app-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Main content container */
-.container {
-  width: 100%;
-  height: 100%;
+.header-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
   flex-direction: column;
 }
 
-/* Text styles */
-h2 {
-  font-size: 40px;
-  margin-bottom: 5px;
-  color: black; /* Changed text color to black */
-  animation: slideIn 1s ease-in-out;
+.brand-logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
-h4 {
-  color: black; /* Changed text color to black */
+.brand-tagline {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.network-selector {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.network-selector label {
+  margin-right: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.network-dropdown {
+  min-width: 150px;
+}
+
+/* Make Ant Design select fit our design */
+.ant-select-selector {
+  border: none !important;
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.ant-select-arrow {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.wallet-badge {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wallet-badge:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wallet-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  margin-right: 0.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M19 7h-1V6c0-1.1-.9-2-2-2H8C6.9 4 6 4.9 6 6v1H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-8 9H7v-2h4v2zm0-4H7v-2h4v2zm6 4h-4v-2h4v2zm0-4h-4v-2h4v2zm1-4H6V6h12v2z'/%3E%3C/svg%3E");
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.wallet-address {
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+/* Main Content */
+.app-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 1rem;
+}
+
+.loading-container p {
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.app-footer {
+  background-color: var(--text-primary);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Cards - for your components to use */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 /* Buttons */
-.frontPageButton {
-  width: 90%;
-  max-width: 300px;
-  margin-top: 20px;
-  padding: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  background-color: #ffa500;
-  color: black;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.frontPageButton:hover {
-  transform: scale(1.05);
-  background-color: #ffcc00;
-}
-
-/* Back Home Button */
-.backHomeButton {
-  width: 90%;
-  max-width: 200px;
-  margin-top: 20px;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
-  background-color: #555;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
   color: white;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  position: absolute;
-  bottom: 20px;
 }
 
-.backHomeButton:hover {
-  background-color: #777;
+.btn-primary:hover {
+  background-color: var(--primary-dark);
 }
 
-/* Bottom section */
-.frontPageBottom {
-  align-items: flex-end;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-  margin-bottom: 125px;
-  gap: 5px;
+.btn-secondary {
+  background-color: var(--secondary);
+  color: white;
 }
 
-.frontPageBottom:hover {
-  cursor: pointer;
-  color: gray;
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
 }
 
-/* Dropdown */
-.dropdown {
-  margin-right: 20px;
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
 }
 
-/* Mnemonic phrase styling */
-.mnemonic {
-  color: #faad14;
-  background: #fffbe6;
-  border: 1px solid #ffe58f;
-  padding: 5px;
-  text-align: justify;
-  width: 310px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
-/* Wallet view */
-.walletView {
-  width: 350px;
-  padding: 10px;
-  height: 100%;
-  overflow-y: auto;
-}
-
-/* Logout button */
-.logoutButton {
-  width: 30px;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  position: absolute;
-  right: 20px;
-  top: 5px;
-  border-radius: 100px;
-}
-
-.logoutButton:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Adjusted for better contrast */
-  cursor: pointer;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .app-footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  
+  .footer-links {
+    justify-content: center;
+    width: 100%;
   }
 }

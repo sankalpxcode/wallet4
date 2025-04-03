@@ -1,50 +1,68 @@
 const express = require("express");
 const { ethers } = require("ethers");
-const app = express();
+const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
+const app = express();
 const port = 3001;
-
-// Replace with your RPC URL (Infura, Alchemy, etc.)
 const RPC_URL = process.env.RPC_URL;
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const UserSchema = new mongoose.Schema({
+  walletAddress: { type: String, unique: true },
+  nonce: { type: Number, default: Math.floor(Math.random() * 1000000) },
+});
+
+const User = mongoose.model("User", UserSchema);
+
+// Middleware
+app.use(cors());
+app.use(express.json());
 
 // Connect to Ethereum provider
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 
-app.use(cors());
-app.use(express.json());
+// ** Route to request a nonce for authentication **
+app.get("/auth/nonce", async (req, res) => {
+  const { walletAddress } = req.query;
+  if (!walletAddress || !ethers.isAddress(walletAddress)) {
+    return res.status(400).json({ error: "Invalid address" });
+  }
 
-app.get("/getTokens", async (req, res) => {
-  try {
-    const { userAddress, chain } = req.query;
+  let user = await User.findOne({ walletAddress });
+  if (!user) {
+    user = await User.create({ walletAddress });
+  }
 
-    if (!ethers.isAddress(userAddress)) {
-      return res.status(400).json({ error: "Invalid Ethereum address" });
-    }
+  return res.json({ nonce: user.nonce });
+});
 
-    // Fetch Native Balance
-    const balance = await provider.getBalance(userAddress);
-    const nativeBalance = ethers.formatEther(balance);
+// ** Route to verify the signed message **
+app.post("/auth/verify", async (req, res) => {
+  const { walletAddress, signature } = req.body;
+  if (!walletAddress || !signature) {
+    return res.status(400).json({ error: "Missing data" });
+  }
 
-    // Token Balances: Requires Smart Contract interaction (ERC-20 tokens)
-    // Here you would query ERC-20 contract addresses manually
+  const user = await User.findOne({ walletAddress });
+  if (!user) return res.status(400).json({ error: "User not found" });
 
-    // NFTs: Requires an NFT marketplace API or a custom contract query
+  const message = `Sign this message to verify your identity: ${user.nonce}`;
+  const recoveredAddress = ethers.verifyMessage(message, signature);
 
-    const jsonResponse = {
-      tokens: [], // Need a method to fetch ERC-20 balances
-      nfts: [],   // Need a method to fetch NFTs
-      balance: nativeBalance
-    };
-
-    return res.status(200).json(jsonResponse);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: "Internal Server Error" });
+  if (recoveredAddress.toLowerCase() === walletAddress.toLowerCase()) {
+    return res.json({ success: true, message: "Authenticated" });
+  } else {
+    return res.status(401).json({ error: "Invalid signature" });
   }
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
