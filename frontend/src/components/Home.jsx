@@ -30,15 +30,12 @@ function Home() {
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", 
           borderRadius: "12px", 
           overflow: "hidden",
-          background: "linear-gradient(135deg, #f0f2f5 0%, #e6f7ff 100%)"
+          background: "#ffffff"
         }}
       >
         <div className="hero-section" style={{ textAlign: "center", marginBottom: "24px" }}>
-          <WalletOutlined style={{ fontSize: "64px", color: "#1890ff", marginBottom: "16px" }} />
-          <Title level={2} style={{ marginBottom: "8px" }}>Welcome to Your Web3 Wallet</Title>
-          <Text style={{ fontSize: "16px", display: "block" }}>
-            Your secure gateway to the blockchain ecosystem
-          </Text>
+          <WalletOutlined style={{ fontSize: "64px", color: "#000000", marginBottom: "16px" }} />
+          <Title level={2} style={{ marginBottom: "8px", color: "#000000" }}>Cryptex</Title>
         </div>
 
         <Divider />
@@ -51,8 +48,8 @@ function Home() {
               onClick={() => navigate('/yourwallet')}
             >
               <Space direction="vertical" size="middle" style={{ display: 'flex', alignItems: 'center' }}>
-                <PlusCircleOutlined style={{ fontSize: "36px", color: "#52c41a" }} />
-                <Title level={4}>Create A Wallet</Title>
+                <PlusCircleOutlined style={{ fontSize: "36px", color: "#000000" }} />
+                <Title level={4} style={{ color: "#000000" }}>Create A Wallet</Title>
                 <Paragraph style={{ textAlign: "center" }}>
                   Generate a new wallet with a unique address and seed phrase
                 </Paragraph>
@@ -64,7 +61,11 @@ function Home() {
                     e.stopPropagation();
                     navigate('/yourwallet');
                   }}
-                  style={{ width: "80%" }}
+                  style={{ 
+                    width: "80%",
+                    backgroundColor: "#000000", 
+                    borderColor: "#000000"
+                  }}
                 >
                   Create Wallet
                 </Button>
@@ -79,8 +80,8 @@ function Home() {
               onClick={() => navigate('/recover')}
             >
               <Space direction="vertical" size="middle" style={{ display: 'flex', alignItems: 'center' }}>
-                <KeyOutlined style={{ fontSize: "36px", color: "#722ed1" }} />
-                <Title level={4}>Recover Existing Wallet</Title>
+                <KeyOutlined style={{ fontSize: "36px", color: "#000000" }} />
+                <Title level={4} style={{ color: "#000000" }}>Recover Existing Wallet</Title>
                 <Paragraph style={{ textAlign: "center" }}>
                   Access your wallet using your 12-word seed phrase
                 </Paragraph>
@@ -92,7 +93,11 @@ function Home() {
                     e.stopPropagation();
                     navigate('/recover');
                   }}
-                  style={{ width: "80%" }}
+                  style={{ 
+                    width: "80%",
+                    borderColor: "#000000",
+                    color: "#000000"
+                  }}
                 >
                   Recover Wallet
                 </Button>
@@ -108,7 +113,7 @@ function Home() {
             <Col xs={24} sm={8}>
               <Card size="small">
                 <Space align="start">
-                  <SafetyOutlined style={{ fontSize: "24px", color: "#1890ff" }} />
+                  <SafetyOutlined style={{ fontSize: "24px", color: "#000000" }} />
                   <div>
                     <Text strong style={{ display: "block" }}>Secure Storage</Text>
                     <Text type="secondary">Your keys never leave your device</Text>
@@ -119,7 +124,7 @@ function Home() {
             <Col xs={24} sm={8}>
               <Card size="small">
                 <Space align="start">
-                  <WalletOutlined style={{ fontSize: "24px", color: "#1890ff" }} />
+                  <WalletOutlined style={{ fontSize: "24px", color: "#000000" }} />
                   <div>
                     <Text strong style={{ display: "block" }}>Multi-Chain Support</Text>
                     <Text type="secondary">Access multiple blockchains</Text>
@@ -130,11 +135,11 @@ function Home() {
             <Col xs={24} sm={8}>
               <Card size="small">
                 <Space align="start">
-                  <QuestionCircleOutlined style={{ fontSize: "24px", color: "#1890ff" }} />
+                  <QuestionCircleOutlined style={{ fontSize: "24px", color: "#000000" }} />
                   <div>
                     <Text strong style={{ display: "block" }}>Need Help?</Text>
                     <Text type="secondary">
-                      <a href="https://your-custom-link.com" target="_blank" rel="noreferrer">
+                      <a href="https://your-custom-link.com" target="_blank" rel="noreferrer" style={{ color: "#000000" }}>
                         Visit Our Docs
                       </a>
                     </Text>
@@ -148,7 +153,7 @@ function Home() {
         <div className="footer" style={{ marginTop: "32px", textAlign: "center" }}>
           <Text type="secondary">
             Learn more about Web3 Wallets at{" "}
-            <a href="https://your-custom-link.com" target="_blank" rel="noreferrer">
+            <a href="https://your-custom-link.com" target="_blank" rel="noreferrer" style={{ color: "#000000" }}>
               our documentation
             </a>
           </Text>

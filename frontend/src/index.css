@@ -7,15 +7,15 @@
 }
 
 :root {
-  --primary: #4f46e5;
-  --primary-dark: #4338ca;
-  --primary-darker: #3730a3;
-  --success: #059669;
-  --danger: #dc2626;
-  --warning: #d97706;
-  --text: #1f2937;
-  --text-light: #6b7280;
-  --background: #f3f4f6;
+  --primary: #000000;
+  --primary-dark: #333333;
+  --primary-darker: #555555;
+  --success: #000000;
+  --danger: #000000;
+  --warning: #555555;
+  --text: #000000;
+  --text-light: #555555;
+  --background: #f9f9f9;
   --white: #ffffff;
 }
 

@@ -1,0 +1,999 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+.bg-container{
+    background-image:url("https://static.vecteezy.com/system/resources/previews/011/641/944/non_2x/crypto-currency-concept-background-bitcoin-digital-money-background-blue-futuristic-technology-background-illustration-free-vector.jpg");
+    background-size:cover;
+    
+    height:80vh;
+    
+}
+.nav-heading{
+    font-family:"Monoton";
+}
+.navbar-align{
+    margin-left: auto;
+}
+.img1{
+    height:300px;
+    width: 400px;
+    margin-left:150px;
+    margin-right:25px;
+    border-style:double;
+    border-width: 5px;
+    border-color:black
+
+}
+.img1::shadow{
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px #40404c
+}
+.carouseL-slide{
+    margin:25px;
+    margin-top:50px
+}
+.carau-heading{
+    text-align: center;
+    font-family:"Bobstar ";
+    color:black;
+    padding-top:30px;
+    padding-left:25px
+   
+}
+.carau-para{
+    text-align: center;
+    font-family:"Roboto";
+    color:rgb(4, 17, 62);
+   
+    padding-left:25px
+    
+}
+.button{
+    margin-left:190px;
+}
+.bg-container-bottom{
+    text-align: center;
+    background-color:rgb(11, 11, 72);
+    background-size:cover;
+    margin-top:50px
+    
+}
+.bg-container-bottom-heading{
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-weight:bold;
+    padding-top:25px
+    
+}
+.bottom-img{
+    height:250px
+    
+}
+.bottom1-heading{
+    text-align: left;
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-size:26px;
+    margin-top: 90px;
+    padding-left:35px
+    
+}
+.bottom1-para{
+    text-align: left;
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-size:18px;
+    padding-left:35px
+}
+.container1{
+    margin:20px
+
+}
+.bg-container-bottom-para{
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-size:18px;
+}
+.bottom2-heading{
+    text-align: left;
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-size:26px;
+    margin-top: 90px;
+    padding-right:35px
+    
+}
+.bottom2-para{
+    text-align: left;
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-size:18px;
+    padding-right:35px
+}
+.container2{
+    padding-bottom:40px;
+    margin-left:40px;
+}
+.working-container{
+    background-color: rgb(4, 4, 28);
+    background-size:cover;
+}
+.img-down{
+    width:800px;
+    height:300px;
+    padding-left:50px;
+}
+.working-container1{
+    padding-top:40px
+
+}
+.working-container2{
+    margin-right:70px;
+    padding-top:40px;
+    
+    
+
+}
+.working-container3{
+    margin-right:100px;
+    padding:40px
+
+}
+.working-heading{
+    text-align: left;
+    color:antiquewhite;
+    font-family: "bobstar";
+    font-size:50px;
+    font-weight: bold;
+    padding-left:35px
+
+}
+.working-para{
+    text-align: left;
+    color:antiquewhite;
+    font-family: "Roboto";
+    font-size:16px;
+    padding-left:50px
+}
+.user-container{
+    text-align: center;
+    background-color:rgb(11, 11, 72);
+    background-size:cover;
+    padding-top:50px
+}
+.user-images{
+    height:200px;
+    width: 350px;
+    padding:25px;
+}
+.user-container1{
+    background-color:rgb(219, 223, 227);
+    background-size:cover;
+    width:350px;
+    border-radius:10px;
+}
+
+.user-container1:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px #40404c
+}
+.user-container2:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px #40404c
+}
+.user-container3:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px #40404c
+}
+.user-container2{
+    background-color:rgb(219, 223, 227);
+    background-size:cover;
+    margin-right:25px;
+    margin-left:25px;
+    width:350px;
+    border-radius:10px;
+}
+.user-container3{
+    background-color:rgb(219, 223, 227);
+    background-size:cover;
+    width:350px;
+    border-radius:10px;
+}
+.user-heading{
+    text-align:center;
+    color:rgb(5, 5, 5);
+    font-family: "bobstar";
+    font-size:26px;
+    margin-top: 10px;
+    
+    
+}
+.user-para{
+    text-align:center;
+    color:rgb(47, 43, 38);
+    font-family: "bobstar";
+    font-size:18px;
+    
+}
+.user-main{
+    padding:40px;
+}
+.button1{
+    text-align: center;
+    margin-bottom:25px;
+}
+.last{
+    background-color: aliceblue;
+    
+}
+.last-para{
+    text-align: center;
+    padding:50px;
+}
+.bg-heading{
+    text-align:center;
+    font-family:"Bree seri";
+    font-weight:bold;
+    font-size: 50px;
+    margin-top:200px;
+    margin-left:100px;
+    color:antiquewhite;
+    
+    
+}
+.bg-button{
+    text-align:center;
+    margin-left:750px;
+}
+.bg-container1{
+    background-color:rgb(24, 24, 24);
+    background-size: cover;
+
+}
+.pic1{
+    width:700px;
+    height:200px;
+    padding-left:50px;
+}
+.heading-container1{
+    text-align: center;
+    font-family: "Bobster";
+    color:aliceblue
+}
+.owner-heading{
+    text-align: center;
+    font-family:"Roboto";
+    color:rgb(8, 4, 30);
+    font-weight: bold;
+}
+.owner-para{
+    text-align: center;
+    font-family:"Roboto";
+    color:rgb(35, 88, 173);
+    font-weight: bold;
+}
+.owner-images{
+    height:320px;
+    width: 300px;
+    padding:25px;
+}
+.vertical-navs{
+    height:100vh;
+    width:50vh;
+}
+.nav-link{
+    color:rgb(150, 157, 163);
+}
+.grid{
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 12px;
+    color:rgb(150, 157, 163);
+}
+.horizontal-container{
+    background-color:rgb(36, 32, 32);
+    background-size:cover;
+    width:150vw;
+}
+.hori-heading{
+    text-align: center;
+    color:rgb(192, 207, 222);
+    font-family: "Bree Seri";
+}
+.carouseL-slide1{
+    margin:25px;
+   
+    margin-top:50px
+    
+}
+.img-car{
+    height:400px;
+    width: 1000px;
+    margin-left:160px;
+    border-style: solid;
+    border-width:3px;
+    border-color:aliceblue;
+    border-radius:25px;
+}
+.hg-button{
+    text-align:center;
+    margin-left:640px;
+    border-width:3px;
+    color:aliceblue;
+    border-color: aliceblue;
+    border-radius:25px;
+    background-color:rgb(36, 32, 32); 
+}
+
+
+.price {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.pricing-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+.pricing-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.pricing-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.pricing-subtext {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.plans-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+}
+
+.plan-content {
+    position: relative;
+}
+
+
+.recommended {
+    border: 2px solid #007bff;
+    position: relative;
+}
+
+.recommended-badge {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    right: 15px;
+}
+
+
+.plan-icon {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+
+.plan-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.plan-price {
+    font-size: 1.3rem;
+    color: #555;
+}
+
+
+.plan-features {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+
+.select-btn {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.select-btn:hover {
+    background: #444;
+}
+
+
+.primary-btn {
+    background: #007bff;
+}
+
+.primary-btn:hover {
+    background: #0056b3;
+}
+
+.mb-3 {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px #24282d;
+    border-radius: 10px;
+}
+
+.mb-3:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px #40404c;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+body {
+    background: #211f1f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.icon img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+.name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.price {
+    color: #080707;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.btn {
+    background: #2b6df6;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn:hover {
+    background: #1b4dcf;
+}
+.features {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.features li {
+    text-align: left;
+    padding: 5px 0;
+}
+.offer {
+    background: #222;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+.offer-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.highlight {
+    font-weight: bold;
+    color: #f4c842;
+}
+.discount {
+    font-weight: bold;
+    color: #2b6df6;
+    border-bottom: 3px solid #f4c842;
+}
+.offer-text {
+    color: #bbb;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+.free {
+    color: #2b6df6;
+    text-decoration: underline;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: left;
+}
+.features ul {
+    list-style-type: none;
+    padding: 0;
+    color: wheat;
+}
+.features1 li {
+    padding: 5px 0;
+    color: rgb(9, 9, 9);
+    list-style-type: circle;
+}
+.addons {
+    padding: 20px;
+}
+.contact-container{
+    background-image: url("https://img.lovepik.com/background/20211022/large/lovepik-contact-us-background-image_500584282.jpg");
+    background-size:cover;
+    height:80vh;
+}
+.us-container-heading{
+    text-align: center;
+    font-family: "bree seri";
+    font-weight: bold;
+    font-size: 45px;
+    color:#555
+}
+.us-container-para{
+    text-align: center;
+    font-family: "Roboto";
+    
+    font-size:18px;
+    color:#110f0f
+}
+.us-map{
+    text-align: center;
+    height:400px;
+    margin-left:120px;
+   margin-top:10px;
+}
+.map-container{
+    height:300px;
+}
+.map-container:hover{
+    background: #444;
+}
+.form-container{
+    background-color:#444;
+    width:400px;
+    border-width:2px;
+    border-radius:5px;
+    border-style:solid;
+    padding:10px
+    
+}
+.form-group{
+    color:wheat;
+}
+.text-small{
+    color:wheat;
+}
+.map-heading{
+    font-family:"Roboto";
+    font-size:26px;
+    padding-top:25px;
+}
+.address-container{
+    margin-left:120px;
+    margin-top:100px;
+    border-width:2px;
+    border-style:solid;
+    border-radius:10px;
+    height: 250px;
+    border-color:#444
+}
+.address-container:hover{
+    transform: scale(1.05);
+    
+}
+.follow-heading{
+    text-align: center;
+    color: rgb(201, 201, 45);
+    font-weight: 50px;
+    font-family:"Lobster"
+    
+
+}
+.follow-us-container{
+    background-color: #40404c;
+}
+.last-contact{
+    background-color:  #40404c;
+    color:#e4e2e2;
+}
+.last-price{
+    background-color:  whitesmoke;
+}
+.services-hero {
+    background: linear-gradient(rgba(11, 11, 72, 0.8), rgba(11, 11, 72, 0.8)), 
+                url('https://images.unsplash.com/photo-1639762681057-408e52192e55');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+    text-align: center;
+    color: white;
+}
+
+.services-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.services-subtitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Services Grid */
+.services-grid {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #4e9af1;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-family: "Bobstar";
+    color: #0b0b48;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.service-btn {
+    display: inline-block;
+    background: #4e9af1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+    background: #3a7bc8;
+    color: white;
+}
+
+/* Features Section */
+.service-features {
+    padding: 80px 0;
+    background-color: #0b0b48;
+    color: white;
+    text-align: center;
+}
+
+.service-features h2 {
+    font-family: "Roboto";
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    padding: 30px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.2);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4e9af1;
+}
+
+.feature-item h4 {
+    font-family: "Bobstar";
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.feature-item p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Testimonials */
+.service-testimonials {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.service-testimonials h2 {
+    font-family: "Bobstar";
+    color: #0b0b48;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonial-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+}
+
+.client-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.client-info h5 {
+    margin: 0;
+    font-family: "Bobstar";
+    color: #0b0b48;
+}
+
+.client-info span {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* CTA Section */
+.service-cta {
+    padding: 80px 0;
+    background: linear-gradient(rgba(11, 11, 72, 0.9), rgba(11, 11, 72, 0.9));
+    color: white;
+    text-align: center;
+}
+
+.service-cta h2 {
+    font-family: "Bobstar";
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.service-cta p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #4e9af1;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3a7bc8;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #0b0b48;
+}
+
+/* Footer */
+.service-footer {
+    padding: 30px 0;
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.service-footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .services-title {
+        font-size: 2.8rem;
+    }
+    
+    .service-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2.2rem;
+    }
+    
+    .services-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .nav-heading {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero {
+        padding: 80px 0;
+    }
+    
+    .services-title {
+        font-size: 1.8rem;
+    }
+    
+    .service-features h2, 
+    .service-testimonials h2,
+    .service-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .feature-item {
+        min-width: 100%;
+    }
+}
+                                                                 

@@ -47,11 +47,15 @@ function RecoverAccount({ setWallet, setSeedPhrase }) {
     <div className="recover-account-container" style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
       <Card 
         bordered={true} 
-        style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", borderRadius: "12px" }}
+        style={{ 
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.08)", 
+          borderRadius: "12px",
+          borderColor: "#e0e0e0"
+        }}
         title={
           <div style={{ display: "flex", alignItems: "center" }}>
-            <KeyOutlined style={{ fontSize: "24px", color: "#1890ff", marginRight: "12px" }} />
-            <Title level={3} style={{ margin: 0 }}>Recover Your Wallet</Title>
+            <KeyOutlined style={{ fontSize: "24px", color: "#333", marginRight: "12px" }} />
+            <Title level={3} style={{ margin: 0, color: "#000" }}>Recover Your Wallet</Title>
           </div>
         }
       >
@@ -67,17 +71,21 @@ function RecoverAccount({ setWallet, setSeedPhrase }) {
         />
 
         <Alert
-          icon={<BulbOutlined />}
+          icon={<BulbOutlined style={{ color: "#444" }} />}
           type="info"
           showIcon
           message="Seed Phrase Recovery"
           description="Enter your 12-word seed phrase below, with words separated by spaces. This will restore access to your wallet and funds."
-          style={{ marginBottom: "16px" }}
+          style={{ 
+            marginBottom: "16px",
+            borderColor: "#e0e0e0",
+            background: "#f8f8f8"
+          }}
         />
 
         <div style={{ marginBottom: "8px", display: "flex", justifyContent: "space-between" }}>
-          <Text>Your Seed Phrase</Text>
-          <Text type={wordCount === 12 ? "success" : "secondary"}>
+          <Text style={{ color: "#333" }}>Your Seed Phrase</Text>
+          <Text style={{ color: wordCount === 12 ? "#000" : "#666", fontWeight: wordCount === 12 ? "500" : "400" }}>
             {wordCount}/12 words
           </Text>
         </div>
@@ -93,7 +101,8 @@ function RecoverAccount({ setWallet, setSeedPhrase }) {
             borderRadius: "8px", 
             fontFamily: "monospace", 
             fontSize: "16px",
-            background: "#f8f9fa"
+            background: "#fff",
+            borderColor: "#d9d9d9"
           }}
         />
 
@@ -103,7 +112,11 @@ function RecoverAccount({ setWallet, setSeedPhrase }) {
             description="The seed phrase you entered is not valid. Please check for typos and try again."
             type="error"
             showIcon
-            style={{ marginBottom: "16px" }}
+            style={{ 
+              marginBottom: "16px",
+              borderColor: "#e0e0e0",
+              background: "#fff"
+            }}
           />
         )}
 
@@ -111,6 +124,10 @@ function RecoverAccount({ setWallet, setSeedPhrase }) {
           <Button 
             icon={<ArrowLeftOutlined />}
             onClick={() => navigate("/")}
+            style={{
+              borderColor: "#d9d9d9",
+              color: "#333"
+            }}
           >
             Back Home
           </Button>
@@ -125,7 +142,9 @@ function RecoverAccount({ setWallet, setSeedPhrase }) {
               minWidth: "160px",
               height: "40px",
               borderRadius: "8px",
-              fontWeight: "500"
+              fontWeight: "500",
+              background: "#000",
+              borderColor: "#000"
             }}
           >
             {isRecovering ? "Recovering..." : "Recover Wallet"}

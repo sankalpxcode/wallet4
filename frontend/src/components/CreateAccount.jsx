@@ -82,12 +82,13 @@ function CreateAccount({ setWallet, setSeedPhrase }) {
         bordered={true} 
         style={{ 
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", 
-          borderRadius: "12px" 
+          borderRadius: "12px",
+          background: "#ffffff" 
         }}
         title={
           <div style={{ display: "flex", alignItems: "center" }}>
-            <KeyOutlined style={{ fontSize: "24px", color: "#1890ff", marginRight: "12px" }} />
-            <Title level={3} style={{ margin: 0 }}>Create New Wallet</Title>
+            <KeyOutlined style={{ fontSize: "24px", color: "#000000", marginRight: "12px" }} />
+            <Title level={3} style={{ margin: 0, color: "#000000" }}>Create New Wallet</Title>
           </div>
         }
       >
@@ -144,7 +145,9 @@ function CreateAccount({ setWallet, setSeedPhrase }) {
                 width: "100%", 
                 maxWidth: "320px",
                 borderRadius: "8px",
-                fontWeight: "500"
+                fontWeight: "500",
+                background: "#000000",
+                borderColor: "#000000"
               }}
             >
               {loading ? "Generating Secure Seed Phrase..." : "Generate Seed Phrase"}
@@ -161,6 +164,7 @@ function CreateAccount({ setWallet, setSeedPhrase }) {
                     icon={isVisible ? <EyeInvisibleOutlined /> : <EyeOutlined />}
                     onClick={toggleVisibility}
                     size="small"
+                    style={{ color: "#000000" }}
                   />
                 </Tooltip>
                 <Tooltip title={isCopied ? "Copied!" : "Copy to clipboard"}>
@@ -169,6 +173,7 @@ function CreateAccount({ setWallet, setSeedPhrase }) {
                     icon={isCopied ? <CheckCircleFilled style={{ color: '#52c41a' }} /> : <CopyOutlined />}
                     onClick={copyToClipboard}
                     size="small"
+                    style={{ color: "#000000" }}
                   />
                 </Tooltip>
               </Space>
@@ -217,6 +222,10 @@ function CreateAccount({ setWallet, setSeedPhrase }) {
               <Button 
                 icon={<ArrowLeftOutlined />}
                 onClick={() => navigate("/")}
+                style={{
+                  borderColor: "#000000",
+                  color: "#000000"
+                }}
               >
                 Back Home
               </Button>
@@ -229,7 +238,9 @@ function CreateAccount({ setWallet, setSeedPhrase }) {
                 style={{ 
                   minWidth: "200px",
                   borderRadius: "8px",
-                  fontWeight: "500"
+                  fontWeight: "500",
+                  background: "#000000",
+                  borderColor: "#000000"
                 }}
               >
                 Create My Wallet

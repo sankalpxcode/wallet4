@@ -49,14 +49,74 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
   const [hash, setHash] = useState(null);
   const [activeTab, setActiveTab] = useState("1");
   
-  // Function to copy wallet address to clipboard
+  // Enhanced function to copy wallet address to clipboard with broader browser support
   const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text);
-    notification.success({
-      message: 'Address Copied',
-      description: 'Wallet address copied to clipboard',
-      placement: 'topRight',
-    });
+    try {
+      // Try the modern Clipboard API first
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)
+          .then(() => {
+            notification.success({
+              message: 'Address Copied',
+              description: 'Wallet address copied to clipboard',
+              placement: 'topRight',
+            });
+          })
+          .catch(err => {
+            // Fall back to the older method if the Clipboard API fails
+            fallbackCopyTextToClipboard(text);
+          });
+      } else {
+        // Use fallback for browsers that don't support clipboard API
+        fallbackCopyTextToClipboard(text);
+      }
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+      notification.error({
+        message: 'Copy Failed',
+        description: 'Could not copy the address to clipboard',
+        placement: 'topRight',
+      });
+    }
+  };
+
+  // Fallback copy function using document.execCommand
+  const fallbackCopyTextToClipboard = (text) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    
+    // Make the textarea out of viewport
+    textArea.style.position = "fixed";
+    textArea.style.left = "-999999px";
+    textArea.style.top = "-999999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        notification.success({
+          message: 'Address Copied',
+          description: 'Wallet address copied to clipboard',
+          placement: 'topRight',
+        });
+      } else {
+        notification.warning({
+          message: 'Copy Failed',
+          description: 'Please try copying the address manually',
+          placement: 'topRight',
+        });
+      }
+    } catch (err) {
+      notification.error({
+        message: 'Copy Failed',
+        description: 'Could not copy the address to clipboard',
+        placement: 'topRight',
+      });
+    }
+    
+    document.body.removeChild(textArea);
   };
 
   const items = [
@@ -117,6 +177,10 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
               icon={<SendOutlined />}
               loading={processing}
               block
+              style={{ 
+                backgroundColor: "#000000", 
+                borderColor: "#000000" 
+              }}
               disabled={
                 !sendToAddress || 
                 !amountToSend || 
@@ -132,7 +196,7 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
             {processing && hash && (
               <Card size="small" className="transaction-info">
                 <Space direction="vertical">
-                  <Progress percent={50} status="active" showInfo={false} />
+                  <Progress percent={50} status="active" showInfo={false} strokeColor="#000000" />
                   <Text>Transaction in progress...</Text>
                   <Text type="secondary" copyable ellipsis style={{ maxWidth: 280 }}>
                     TX Hash: {hash}
@@ -172,7 +236,7 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
                       <Avatar 
                         src={item.logo} 
                         icon={!item.logo && <DollarOutlined />}
-                        style={{ backgroundColor: !item.logo ? '#f56a00' : 'transparent' }}
+                        style={{ backgroundColor: !item.logo ? '#000000' : 'transparent' }}
                       />
                     }
                     title={<span>{item.symbol} <Text type="secondary">({item.name})</Text></span>}
@@ -191,7 +255,7 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
               description={
                 <Space direction="vertical" align="center">
                   <Text>No tokens found in this wallet</Text>
-                  <Button type="link" href="https://moralismoney.com/" target="_blank">
+                  <Button type="link" href="https://moralismoney.com/" target="_blank" style={{ color: "#000000" }}>
                     Find Alt Coin Gems at moralismoney.com
                   </Button>
                 </Space>
@@ -243,7 +307,7 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
               description={
                 <Space direction="vertical" align="center">
                   <Text>No NFTs found in this wallet</Text>
-                  <Button type="link" href="https://moralismoney.com/" target="_blank">
+                  <Button type="link" href="https://moralismoney.com/" target="_blank" style={{ color: "#000000" }}>
                     Explore NFT Collections at moralismoney.com
                   </Button>
                 </Space>
@@ -387,12 +451,12 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
       >
         <div className="wallet-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
           <Space>
-            <WalletOutlined style={{ fontSize: "24px", color: "#1890ff" }} />
-            <Title level={3} style={{ margin: 0 }}>My Wallet</Title>
+            <WalletOutlined style={{ fontSize: "24px", color: "#000000" }} />
+            <Title level={3} style={{ margin: 0, color: "#000000" }}>My Wallet</Title>
           </Space>
           
           <Space>
-            <Tag color="blue">
+            <Tag color="black">
               {CHAINS_CONFIG[selectedChain].name}
             </Tag>
             <Button 
@@ -414,7 +478,7 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
         >
           <Space>
             <Text type="secondary">Wallet Address:</Text>
-            <Text copyable={{ text: wallet }} strong ellipsis style={{ maxWidth: 280 }}>
+            <Text strong ellipsis style={{ maxWidth: 280 }}>
               {wallet}
             </Text>
             <Button 
@@ -423,6 +487,7 @@ function WalletView({wallet, setWallet, seedPhrase, setSeedPhrase, selectedChain
               icon={<CopyOutlined />} 
               onClick={() => copyToClipboard(wallet)}
               title="Copy Address"
+              style={{ color: "#000000" }}
             />
           </Space>
         </Card>

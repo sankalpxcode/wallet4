@@ -83,16 +83,20 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container">
-      <header className="app-header">
+    <div className="app-container" style={{ background: "#fff", color: "#000" }}>
+      <header className="app-header" style={{ 
+        background: "#f8f8f8", 
+        borderBottom: "1px solid #e0e0e0",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
+      }}>
         <div className="header-content">
           <div className="logo-container">
-            <h1 className="brand-logo">Cryptex</h1>
-            <span className="brand-tagline">Secure Crypto Wallet</span>
+            <h1 className="brand-logo" style={{ color: "#000" }}>Cryptex</h1>
+            <span className="brand-tagline" style={{ color: "#444" }}></span>
           </div>
           
           <div className="network-selector">
-            <label>Network:</label>
+            <label style={{ color: "#333" }}>Network:</label>
             <Select
               value={selectedChain}
               onChange={(val) => setSelectedChain(val)}
@@ -103,13 +107,30 @@ function App() {
                 { label: 'Avalanche', value: '0xa86a' },
               ]}
               className="network-dropdown"
+              style={{ 
+                borderColor: "#d9d9d9",
+                color: "#000"
+              }}
             />
           </div>
           
           {wallet && (
-            <div className="wallet-badge">
-              <div className="wallet-icon"></div>
-              <span className="wallet-address">
+            <div className="wallet-badge" style={{ 
+              background: "#f0f0f0",
+              border: "1px solid #d9d9d9",
+              borderRadius: "8px",
+              padding: "4px 12px",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              <div className="wallet-icon" style={{ 
+                background: "#000",
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                marginRight: "8px"
+              }}></div>
+              <span className="wallet-address" style={{ color: "#333" }}>
                 {`${wallet.substring(0, 6)}...${wallet.substring(wallet.length - 4)}`}
               </span>
             </div>
@@ -117,9 +138,16 @@ function App() {
         </div>
       </header>
 
-      <main className="app-content">
+      <main className="app-content" style={{ padding: "20px" }}>
         {loading ? (
-          <div className="loading-container">
+          <div className="loading-container" style={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            alignItems: "center", 
+            justifyContent: "center",
+            padding: "40px",
+            color: "#333" 
+          }}>
             <Spin size="large" />
             <p>Connecting to wallet...</p>
           </div>
@@ -149,12 +177,18 @@ function App() {
         )}
       </main>
       
-      <footer className="app-footer">
+      <footer className="app-footer" style={{ 
+        borderTop: "1px solid #e0e0e0", 
+        padding: "16px 24px",
+        background: "#f8f8f8",
+        color: "#666",
+        marginTop: "auto"
+      }}>
         <p>© 2025 Cryptex. All rights reserved.</p>
         <div className="footer-links">
-          <a href="#">Terms</a>
-          <a href="#">Privacy</a>
-          <a href="#">Support</a>
+          <a href="#" style={{ color: "#333", marginRight: "16px", textDecoration: "none" }}>Terms</a>
+          <a href="#" style={{ color: "#333", marginRight: "16px", textDecoration: "none" }}>Privacy</a>
+          <a href="#" style={{ color: "#333", textDecoration: "none" }}>Support</a>
         </div>
       </footer>
     </div>
